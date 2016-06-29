@@ -14,4 +14,7 @@ describe('String#find_and_replace') do
   it('handles mixed case entries') do
     expect(("wHaT iS yOuR nAmE?").find_and_replace('yOuR', 'my')).to(eq("What is my name?"))
   end
+  it('handles "I" in the middle of the sentence') do
+    expect(("How am I alive right now?").find_and_replace('How', 'Why')).to(eq("Why am I alive right now?"))
+  end
 end

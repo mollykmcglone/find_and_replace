@@ -12,38 +12,20 @@ class String
         value_to_add = word1_lower.length - 1
         end_position = position + value_to_add
         word[position..end_position] = word2_lower
+        if word == 'i'
+          word.capitalize!()
+        end
         new_word_array.push(word)
       else
+        if word == 'i'
+          word.capitalize!()
+        end
         new_word_array.push(word)
       end
     end
-    new_word_array.join(' ').capitalize()
+    first_word = new_word_array.shift()#.capitalize()
+    first_word.capitalize!()
+    new_word_array.unshift(first_word)
+    new_word_array.join(' ')
   end
 end
-
-
-
-
-
-# #  example_word = self
-#   if example_word.include?(word1_lower)
-#     position = example_word.index(word1)
-#     value_to_add = word1.length - 1
-#     end_position = position + value_to_add
-#     example_word[position..end_position] = word2_l
-#     example_word
-#   else
-#     example_word
-#   end
-#
-#
-# word_array.each do |word|
-#   if word == word1
-#     # word = word2
-#     new_word_array.push(word2)
-#   else
-#     new_word_array.push(word)
-#   end
-#   # new_word_array.concat(word)
-# end
-# new_word_array.join(' ')
